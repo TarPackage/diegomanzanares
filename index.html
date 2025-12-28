@@ -2,54 +2,259 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>GitHub Pages OK</title>
+  <title>Diego Manzanares | Administrador de Sistemas Cloud & Seguridad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Administrador de sistemas híbridos on-premise y Azure. Especializado en seguridad, automatización y entornos empresariales. Certificaciones AZ-104 y AZ-500.">
+  <meta name="author" content="Diego Manzanares">
+
   <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #020617;
+      --card: #020617;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --border: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
+      background: linear-gradient(180deg, #020617, #020617);
+      color: var(--text);
+      line-height: 1.6;
     }
-    .box {
-      background: #020617;
-      padding: 2rem 3rem;
+
+    header {
+      padding: 5rem 1.5rem 4rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin: 0 0 1rem;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    header p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      padding: 1.5rem;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
       text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
-    h1 {
-      margin: 0 0 0.5rem;
-      color: #38bdf8;
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
-    p {
-      margin: 0.25rem 0;
-      opacity: 0.9;
-    }
-    small {
-      display: block;
-      margin-top: 1rem;
-      opacity: 0.6;
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
-<body>
-  <div class="box">
-    <h1>GitHub Pages funcionando</h1>
-    <p>El sitio se está sirviendo correctamente.</p>
-    <p>Repositorio: <strong>diegomanzanares</strong></p>
-    <small>
-      Cargado el <span id="date"></span>
-    </small>
-  </div>
 
-  <script>
-    document.getElementById("date").textContent =
-      new Date().toLocaleString();
-  </script>
+<body>
+
+<header>
+  <h1>Diego <span>Manzanares</span></h1>
+  <p>
+    Administrador de sistemas híbridos <strong>on-premise y Microsoft Azure</strong>,
+    especializado en <strong>seguridad, automatización y entornos empresariales</strong>.
+    Experiencia en infraestructuras críticas, cumplimiento normativo y soporte técnico avanzado.
+  </p>
+</header>
+
+<section>
+  <h2>Perfil profesional</h2>
+  <div class="card">
+    <p>
+      Administrador de sistemas con experiencia en entornos híbridos, combinando
+      infraestructura local y cloud Azure. Orientado a la seguridad, automatización
+      y estabilidad de servicios IT en entornos corporativos.
+    </p>
+    <p>
+      Trabajo habitual con scripting en PowerShell, administración de redes, VPN,
+      firewalls, servicios cloud y procesos de auditoría y documentación técnica.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Especialización técnica</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Infraestructura & Sistemas</h3>
+      <ul>
+        <li>Administración Windows Server</li>
+        <li>Entornos on-premise</li>
+        <li>Servicios de red y VPN</li>
+        <li>Monitorización y mantenimiento</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Microsoft Azure</h3>
+      <ul>
+        <li>Azure AD / Entra ID</li>
+        <li>Máquinas virtuales</li>
+        <li>Redes y seguridad</li>
+        <li>Gestión híbrida</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Seguridad & Automatización</h3>
+      <ul>
+        <li>Hardening y control de accesos</li>
+        <li>Firewall y políticas</li>
+        <li>PowerShell scripting</li>
+        <li>Automatización de tareas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Certificaciones</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Microsoft Azure Administrator</h3>
+      <p>AZ-104</p>
+    </div>
+    <div class="card">
+      <h3>Microsoft Azure Security Engineer</h3>
+      <p>AZ-500</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Experiencia profesional</h2>
+  <div class="grid grid-2">
+
+    <div class="card">
+      <h3>CESA / Héroux-Devtek</h3>
+      <p><em>Abril 2024 – Actualidad</em></p>
+      <ul>
+        <li>Administración de sistemas y seguridad informática</li>
+        <li>Auditorías y cumplimiento normativo</li>
+        <li>Soporte a entornos empresariales críticos</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>UFP España</h3>
+      <p><em>Abril 2023 – Abril 2024</em></p>
+      <ul>
+        <li>Automatización de servicios</li>
+        <li>Implantación de seguridad IT</li>
+        <li>Documentación técnica en entorno aeronáutico</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Contacto</h2>
+  <div class="card">
+    <p>📍 Madrid, España</p>
+    <p>📧 <a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a></p>
+    <p>📞 +34 722 764 060</p>
+    <p>🔗 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Diego Manzanares · Administrador de Sistemas
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
