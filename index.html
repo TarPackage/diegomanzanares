@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Diego Manzanares | Administrador de Sistemas y Cloud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Administrador de sistemas híbridos on-premise y Microsoft Azure. Seguridad, automatización y entornos empresariales. Certificado AZ-104 y AZ-500.">
+  <meta name="description" content="Administrador de sistemas híbridos on-premise y Microsoft Azure. Seguridad, automatización y entornos empresariales.">
   <link rel="icon" href="web-icon.ico" type="image/x-icon">
 
   <style>
@@ -32,7 +32,7 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.65;
@@ -49,12 +49,10 @@
       padding-bottom: 4rem;
     }
 
-    /* ===== HERO ===== */
     .hero h1 {
       font-size: clamp(2.2rem, 6vw, 3rem);
       font-weight: 700;
       margin: 0 0 1.2rem;
-      overflow-wrap: anywhere;
     }
 
     .cursor {
@@ -68,8 +66,8 @@
     }
 
     @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
+      0%,50%,100% { opacity: 1; }
+      25%,75% { opacity: 0; }
     }
 
     .hero p {
@@ -124,7 +122,19 @@
 
     li { margin-bottom: 0.45rem; }
 
-    /* ===== CONTACT ===== */
+    .cert {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+    }
+
+    .azure-icon {
+      width: 22px;
+      height: 22px;
+      stroke: var(--accent);
+    }
+
     .contact-item {
       display: flex;
       align-items: center;
@@ -136,19 +146,6 @@
       width: 18px;
       height: 18px;
       stroke: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .cert {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 500;
-    }
-
-    .azure-icon {
-      width: 22px;
-      height: 22px;
     }
 
     footer {
@@ -156,6 +153,35 @@
       text-align: center;
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .footer-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-icons a:hover {
+      background: var(--card);
+      transform: translateY(-2px);
+    }
+
+    .footer-icons svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
     }
 
     a {
@@ -169,19 +195,13 @@
 
 <header class="hero">
   <h1 id="typewriter"></h1>
-  <p>
-    Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en
-    seguridad, automatización y entornos empresariales.
-  </p>
+  <p>Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en seguridad, automatización y entornos empresariales.</p>
 </header>
 
 <section>
   <h2>Perfil profesional</h2>
   <div class="card">
-    <p>
-      Administrador de sistemas con experiencia en infraestructuras híbridas,
-      seguridad IT, automatización con PowerShell y entornos corporativos regulados.
-    </p>
+    Administrador de sistemas con experiencia en infraestructuras híbridas, seguridad IT, automatización con PowerShell y entornos corporativos regulados.
   </div>
 </section>
 
@@ -193,7 +213,7 @@
       <h3>SAS Institute</h3>
       <div class="role">Administrador de sistemas · 2021 – 2023</div>
       <ul>
-        <li>Gestión de redes, VPN y reglas de firewall</li>
+        <li>Gestión de redes, VPN y firewall</li>
         <li>Automatización con PowerShell</li>
         <li>Administración de servicios web</li>
         <li>Auditorías y cumplimiento</li>
@@ -244,8 +264,11 @@
     </div>
 
     <div class="card cert">
-      <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
-        <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+      <svg class="azure-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+        <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+        <path d="M15 2v5h5"/>
+        <path d="M8 11h8"/>
+        <path d="M8 15h8"/>
       </svg>
       <a href="europass-dmg.pdf" target="_blank">Europass</a>
     </div>
@@ -257,26 +280,9 @@
   <h2>Contacto</h2>
   <div class="grid">
 
+    <div class="card contact-item">Madrid, España</div>
+    <div class="card contact-item">+34 722 764 060</div>
     <div class="card contact-item">
-      <svg class="icon" fill="none" viewBox="0 0 24 24">
-        <path stroke-width="1.8" d="M12 11.5a3 3 0 1 0 0-6Z"/>
-        <path stroke-width="1.8" d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z"/>
-      </svg>
-      Madrid, España
-    </div>
-
-    <div class="card contact-item">
-      <svg class="icon" fill="none" viewBox="0 0 24 24">
-        <path stroke-width="1.8" d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7"/>
-      </svg>
-      +34 722 764 060
-    </div>
-
-    <div class="card contact-item">
-      <svg class="icon" fill="none" viewBox="0 0 24 24">
-        <path stroke-width="1.8" d="M4 4h16v16H4z"/>
-        <path stroke-width="1.8" d="m22 6-10 7L2 6"/>
-      </svg>
       <a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a>
     </div>
 
@@ -285,22 +291,38 @@
 
 <footer>
   © <span id="year"></span> Diego Manzanares
+
+  <div class="footer-icons">
+    <a href="https://www.linkedin.com/in/diego-manzanares-garcía/" target="_blank" aria-label="LinkedIn">
+      <svg fill="none" viewBox="0 0 24 24">
+        <path stroke-width="1.8" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <path stroke-width="1.8" d="M2 9h4v12H2z"/>
+        <circle cx="4" cy="4" r="2" stroke-width="1.8"/>
+      </svg>
+    </a>
+
+    <a href="https://github.com/TarPackage" target="_blank" aria-label="GitHub">
+      <svg fill="none" viewBox="0 0 24 24">
+        <path stroke-width="1.8" d="M12 2a10 10 0 0 0-3 19.5c.5.1.7-.2.7-.5v-1.7c-3 .6-3.7-1.4-3.7-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1 1.5.8 1.8 1.2.4-.7.9-1.2 1.5-1.5-2.4-.3-4.9-1.2-4.9-5.4 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 .9.9-.3 1.9-.5 3-.5s2.1.2 3 .5c2.1-1.2 3-.9 3-.9.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.2-2.5 5.1-4.9 5.4.4.3.8 1 .8 2v3c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/>
+      </svg>
+    </a>
+  </div>
 </footer>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const text = "Hola, soy Diego Manzanares 👋";
-    const target = document.getElementById("typewriter");
+    const el = document.getElementById("typewriter");
     let i = 0;
 
     (function type() {
       if (i < text.length) {
-        target.textContent += text.charAt(i++);
+        el.textContent += text.charAt(i++);
         setTimeout(type, 60);
       } else {
         const cursor = document.createElement("span");
         cursor.className = "cursor";
-        target.appendChild(cursor);
+        el.appendChild(cursor);
       }
     })();
 
