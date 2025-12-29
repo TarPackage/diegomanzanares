@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="">
 <head>
-  <meta charset="UTF-8">
-  <title>Diego Manzanares | Administrador de Sistemas Cloud & Seguridad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Diego Manzanares | Systems & Cloud Administrator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Administrador de sistemas híbridos on-premise y Azure. Especializado en seguridad, automatización y entornos empresariales. Certificaciones AZ-104 y AZ-500.">
-  <meta name="author" content="Diego Manzanares">
+  <meta name="description" content="Hybrid on-premise & Azure Systems Administrator. Security, automation and enterprise environments. AZ-104 & AZ-500 certified.">
 
   <style>
+    /* ===== CSS VARIABLES ===== */
     :root {
-      --bg: #020617;
-      --bg-soft: #020617;
-      --card: #020617;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --border: #1e293b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #020617;
+      --muted: #475569;
+      --accent: #0284c7;
+      --border: #e2e8f0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #020617;
+        --card: #020617;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #38bdf8;
+        --border: #1e293b;
+      }
     }
 
     * {
@@ -26,43 +36,40 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
-      background: linear-gradient(180deg, #020617, #020617);
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
 
-    header {
-      padding: 5rem 1.5rem 4rem;
+    header, section, footer {
       max-width: 1100px;
       margin: auto;
+      padding: 2.5rem 1.25rem;
     }
 
-    header h1 {
-      font-size: 2.6rem;
-      margin: 0 0 1rem;
+    header {
+      padding-top: 4rem;
+      padding-bottom: 3rem;
     }
 
-    header h1 span {
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+
+    h1 span {
       color: var(--accent);
     }
 
-    header p {
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 1.5rem;
-    }
-
     h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
       border-left: 4px solid var(--accent);
       padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      color: var(--muted);
     }
 
     .grid {
@@ -71,26 +78,21 @@
     }
 
     @media (min-width: 768px) {
-      .grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
     }
 
     .card {
-      background: rgba(255,255,255,0.02);
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 1.5rem;
     }
 
     .card h3 {
       margin-top: 0;
       color: var(--accent);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     ul {
@@ -102,27 +104,11 @@
       margin-bottom: 0.5rem;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-    }
-
-    .tag {
-      border: 1px solid var(--border);
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
     footer {
       border-top: 1px solid var(--border);
-      padding: 2rem 1.5rem;
       text-align: center;
-      color: var(--muted);
       font-size: 0.9rem;
+      color: var(--muted);
     }
 
     a {
@@ -140,119 +126,120 @@
 
 <header>
   <h1>Diego <span>Manzanares</span></h1>
-  <p>
-    Administrador de sistemas híbridos <strong>on-premise y Microsoft Azure</strong>,
-    especializado en <strong>seguridad, automatización y entornos empresariales</strong>.
-    Experiencia en infraestructuras críticas, cumplimiento normativo y soporte técnico avanzado.
-  </p>
+  <p id="hero"></p>
 </header>
 
 <section>
-  <h2>Perfil profesional</h2>
+  <h2 id="profile-title"></h2>
   <div class="card">
-    <p>
-      Administrador de sistemas con experiencia en entornos híbridos, combinando
-      infraestructura local y cloud Azure. Orientado a la seguridad, automatización
-      y estabilidad de servicios IT en entornos corporativos.
-    </p>
-    <p>
-      Trabajo habitual con scripting en PowerShell, administración de redes, VPN,
-      firewalls, servicios cloud y procesos de auditoría y documentación técnica.
-    </p>
+    <p id="profile-text"></p>
   </div>
 </section>
 
 <section>
-  <h2>Especialización técnica</h2>
+  <h2 id="skills-title"></h2>
   <div class="grid grid-3">
     <div class="card">
-      <h3>Infraestructura & Sistemas</h3>
-      <ul>
-        <li>Administración Windows Server</li>
-        <li>Entornos on-premise</li>
-        <li>Servicios de red y VPN</li>
-        <li>Monitorización y mantenimiento</li>
-      </ul>
+      <h3 id="skill1-title"></h3>
+      <ul id="skill1-list"></ul>
     </div>
-
     <div class="card">
-      <h3>Microsoft Azure</h3>
-      <ul>
-        <li>Azure AD / Entra ID</li>
-        <li>Máquinas virtuales</li>
-        <li>Redes y seguridad</li>
-        <li>Gestión híbrida</li>
-      </ul>
+      <h3 id="skill2-title"></h3>
+      <ul id="skill2-list"></ul>
     </div>
-
     <div class="card">
-      <h3>Seguridad & Automatización</h3>
-      <ul>
-        <li>Hardening y control de accesos</li>
-        <li>Firewall y políticas</li>
-        <li>PowerShell scripting</li>
-        <li>Automatización de tareas</li>
-      </ul>
+      <h3 id="skill3-title"></h3>
+      <ul id="skill3-list"></ul>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Certificaciones</h2>
+  <h2 id="certs-title"></h2>
   <div class="grid grid-2">
-    <div class="card">
-      <h3>Microsoft Azure Administrator</h3>
-      <p>AZ-104</p>
-    </div>
-    <div class="card">
-      <h3>Microsoft Azure Security Engineer</h3>
-      <p>AZ-500</p>
-    </div>
+    <div class="card">AZ-104 · Azure Administrator</div>
+    <div class="card">AZ-500 · Azure Security Engineer</div>
   </div>
 </section>
 
 <section>
-  <h2>Experiencia profesional</h2>
-  <div class="grid grid-2">
-
-    <div class="card">
-      <h3>CESA / Héroux-Devtek</h3>
-      <p><em>Abril 2024 – Actualidad</em></p>
-      <ul>
-        <li>Administración de sistemas y seguridad informática</li>
-        <li>Auditorías y cumplimiento normativo</li>
-        <li>Soporte a entornos empresariales críticos</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>UFP España</h3>
-      <p><em>Abril 2023 – Abril 2024</em></p>
-      <ul>
-        <li>Automatización de servicios</li>
-        <li>Implantación de seguridad IT</li>
-        <li>Documentación técnica en entorno aeronáutico</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>Contacto</h2>
+  <h2 id="contact-title"></h2>
   <div class="card">
-    <p>📍 Madrid, España</p>
+    <p>📍 Madrid, Spain</p>
     <p>📧 <a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a></p>
     <p>📞 +34 722 764 060</p>
-    <p>🔗 <a href="https://www.linkedin.com/in/diego-manzanares-garcía/" target="_blank">LinkedIn</a></p>
   </div>
 </section>
 
 <footer>
-  © <span id="year"></span> Diego Manzanares · Administrador de Sistemas
+  © <span id="year"></span> Diego Manzanares
 </footer>
 
 <script>
+  const lang = navigator.language.startsWith("es") ? "es" : "en";
+
+  const content = {
+    es: {
+      hero: "Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en seguridad, automatización y entornos empresariales.",
+      profileTitle: "Perfil profesional",
+      profileText: "Administrador de sistemas con experiencia en infraestructuras híbridas, seguridad IT, automatización con PowerShell y soporte a entornos corporativos críticos.",
+      skillsTitle: "Especialización técnica",
+      skill1: {
+        title: "Infraestructura",
+        items: ["Windows Server", "On-premise", "VPN y redes", "Monitorización"]
+      },
+      skill2: {
+        title: "Microsoft Azure",
+        items: ["Azure AD / Entra ID", "VMs", "Redes", "Entornos híbridos"]
+      },
+      skill3: {
+        title: "Seguridad",
+        items: ["Hardening", "Firewalls", "PowerShell", "Automatización"]
+      },
+      certsTitle: "Certificaciones",
+      contactTitle: "Contacto"
+    },
+    en: {
+      hero: "Hybrid on-premise and Microsoft Azure systems administrator focused on security, automation and enterprise environments.",
+      profileTitle: "Professional profile",
+      profileText: "Systems administrator experienced in hybrid infrastructures, IT security, PowerShell automation and enterprise-grade environments.",
+      skillsTitle: "Technical expertise",
+      skill1: {
+        title: "Infrastructure",
+        items: ["Windows Server", "On-premise", "VPN & networking", "Monitoring"]
+      },
+      skill2: {
+        title: "Microsoft Azure",
+        items: ["Azure AD / Entra ID", "Virtual Machines", "Networking", "Hybrid setups"]
+      },
+      skill3: {
+        title: "Security",
+        items: ["Hardening", "Firewalls", "PowerShell", "Automation"]
+      },
+      certsTitle: "Certifications",
+      contactTitle: "Contact"
+    }
+  };
+
+  const c = content[lang];
+
+  document.documentElement.lang = lang;
+  document.getElementById("hero").textContent = c.hero;
+  document.getElementById("profile-title").textContent = c.profileTitle;
+  document.getElementById("profile-text").textContent = c.profileText;
+  document.getElementById("skills-title").textContent = c.skillsTitle;
+  document.getElementById("certs-title").textContent = c.certsTitle;
+  document.getElementById("contact-title").textContent = c.contactTitle;
+
+  [["skill1","skill2","skill3"]].flat().forEach((s,i)=>{
+    document.getElementById(`${s}-title`).textContent = c[s].title;
+    c[s].items.forEach(item=>{
+      const li=document.createElement("li");
+      li.textContent=item;
+      document.getElementById(`${s}-list`).appendChild(li);
+    });
+  });
+
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
