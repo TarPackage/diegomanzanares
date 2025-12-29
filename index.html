@@ -71,10 +71,18 @@
       gap: 1.5rem;
     }
 
-    @media (min-width: 768px) {
-      .grid-2 { grid-template-columns: repeat(2, 1fr); }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (min-width: 640px) {
+      .grid-exp {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (min-width: 1024px) {
+  .grid-exp {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 
     .card {
       background: var(--card);
