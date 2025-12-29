@@ -54,8 +54,7 @@
       font-size: clamp(2.2rem, 6vw, 3rem);
       font-weight: 700;
       margin: 0 0 1.2rem;
-      white-space: nowrap;
-      overflow: hidden;
+      overflow-wrap: anywhere;
     }
 
     .cursor {
@@ -86,17 +85,17 @@
       margin-bottom: 1.5rem;
     }
 
-    .grid-exp {
+    .grid {
       display: grid;
       gap: 1.5rem;
     }
 
     @media (min-width: 640px) {
-      .grid-exp { grid-template-columns: repeat(2, 1fr); }
+      .grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (min-width: 1024px) {
-      .grid-exp { grid-template-columns: repeat(3, 1fr); }
+      .grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     .card {
@@ -125,12 +124,11 @@
 
     li { margin-bottom: 0.45rem; }
 
-    /* ===== CONTACT ICONS ===== */
-    .contact p {
+    /* ===== CONTACT ===== */
+    .contact-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin: 0.45rem 0;
+      gap: 0.6rem;
       color: var(--muted);
     }
 
@@ -183,7 +181,7 @@
 
 <section>
   <h2 id="experience-title"></h2>
-  <div class="grid-exp">
+  <div class="grid">
 
     <div class="card">
       <h3>SAS Institute</h3>
@@ -208,7 +206,7 @@
 
 <section>
   <h2 id="certs-title"></h2>
-  <div class="grid-exp">
+  <div class="grid">
     <div class="card cert">
       <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
         <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
@@ -226,27 +224,31 @@
 
 <section>
   <h2 id="contact-title"></h2>
-  <div class="card contact">
-    <p>
+  <div class="grid">
+
+    <div class="card contact-item">
       <svg class="icon" fill="none" viewBox="0 0 24 24">
         <path stroke-width="1.8" d="M12 11.5a3 3 0 1 0 0-6Z"/>
         <path stroke-width="1.8" d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z"/>
       </svg>
       Madrid, España
-    </p>
-    <p>
+    </div>
+
+    <div class="card contact-item">
       <svg class="icon" fill="none" viewBox="0 0 24 24">
         <path stroke-width="1.8" d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7"/>
       </svg>
       +34 722 764 060
-    </p>
-    <p>
+    </div>
+
+    <div class="card contact-item">
       <svg class="icon" fill="none" viewBox="0 0 24 24">
         <path stroke-width="1.8" d="M4 4h16v16H4z"/>
         <path stroke-width="1.8" d="m22 6-10 7L2 6"/>
       </svg>
       <a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a>
-    </p>
+    </div>
+
   </div>
 </section>
 
@@ -260,7 +262,7 @@
     const es = lang.startsWith("es");
 
     const t = es ? {
-      greeting: "Hola, soy 👋 Diego Manzanares",
+      greeting: "Hola, soy Diego Manzanares 👋",
       hero: "Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en seguridad, automatización y entornos empresariales.",
       profileTitle: "Perfil profesional",
       profileText: "Administrador de sistemas con experiencia en infraestructuras híbridas, seguridad IT, automatización con PowerShell y entornos corporativos regulados.",
@@ -274,24 +276,24 @@
       },
       sas: [
         "Gestión de redes, VPN y reglas de firewall",
-        "Automatización y scripting con PowerShell",
-        "Administración de servicios y entornos web",
-        "Auditorías y cumplimiento de estándares"
+        "Automatización con PowerShell",
+        "Administración de servicios web",
+        "Auditorías y cumplimiento"
       ],
       ufp: [
-        "Automatización de servicios y seguridad",
-        "Gestión del área de soporte técnico",
-        "Documentación en entorno aeronáutico",
+        "Automatización y seguridad",
+        "Gestión del soporte técnico",
+        "Documentación aeronáutica",
         "Cumplimiento normativo"
       ],
       heroux: [
-        "Administración y monitorización de sistemas",
+        "Administración y monitorización",
         "Seguridad y hardening",
-        "Gestión de entornos híbridos",
+        "Entornos híbridos",
         "Auditorías y compliance"
       ]
     } : {
-      greeting: "Hi, I'm 👋 Diego Manzanares",
+      greeting: "Hi, I'm Diego Manzanares 👋",
       hero: "Hybrid on-premise and Microsoft Azure systems administrator focused on security, automation and enterprise environments.",
       profileTitle: "Professional profile",
       profileText: "Systems administrator experienced in hybrid infrastructures, IT security, PowerShell automation and regulated enterprise environments.",
@@ -305,31 +307,30 @@
       },
       sas: [
         "Network, VPN and firewall management",
-        "PowerShell automation and scripting",
-        "Services and web environments administration",
+        "PowerShell automation",
+        "Web services administration",
         "Audits and compliance"
       ],
       ufp: [
-        "Service automation and security implementation",
+        "Automation and security",
         "Technical support management",
-        "Aeronautical process documentation",
+        "Aeronautical documentation",
         "Regulatory compliance"
       ],
       heroux: [
         "Systems administration and monitoring",
         "Security and hardening",
-        "Hybrid infrastructure management",
+        "Hybrid environments",
         "Audits and compliance"
       ]
     };
 
-    // Typewriter
     const target = document.getElementById("typewriter");
     let i = 0;
     (function type() {
       if (i < t.greeting.length) {
         target.textContent += t.greeting.charAt(i++);
-        setTimeout(type, 65);
+        setTimeout(type, 60);
       } else {
         const cursor = document.createElement("span");
         cursor.className = "cursor";
