@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Diego Manzanares | Systems & Cloud Administrator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Hybrid on-premise & Azure Systems Administrator. Security, automation and enterprise environments. AZ-104 & AZ-500 certified.">
 
   <style>
-    /* ===== CSS VARIABLES ===== */
+    /* ===== COLOR SYSTEM (MEJOR CONTRASTE) ===== */
     :root {
-      --bg: #f8fafc;
+      --bg: #f1f5f9;
       --card: #ffffff;
-      --text: #020617;
+      --text: #0f172a;
       --muted: #475569;
-      --accent: #0284c7;
-      --border: #e2e8f0;
+      --accent: #2563eb;
+      --border: #cbd5e1;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #020617;
-        --card: #020617;
+        --bg: #0b1220;
+        --card: #111827;
         --text: #e5e7eb;
-        --muted: #9ca3af;
+        --muted: #94a3b8;
         --accent: #38bdf8;
-        --border: #1e293b;
+        --border: #1f2937;
       }
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     header, section, footer {
@@ -57,20 +55,16 @@
       margin-bottom: 1rem;
     }
 
-    h1 span {
-      color: var(--accent);
-    }
+    h1 span { color: var(--accent); }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       border-left: 4px solid var(--accent);
       padding-left: 0.75rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
-    p {
-      color: var(--muted);
-    }
+    p { color: var(--muted); }
 
     .grid {
       display: grid;
@@ -86,13 +80,20 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 1.5rem;
+      padding: 1.6rem;
     }
 
     .card h3 {
       margin-top: 0;
+      margin-bottom: 0.3rem;
       color: var(--accent);
       font-size: 1.05rem;
+    }
+
+    .role {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
     }
 
     ul {
@@ -100,8 +101,36 @@
       margin: 0.5rem 0 0;
     }
 
-    li {
-      margin-bottom: 0.5rem;
+    li { margin-bottom: 0.45rem; }
+
+    /* ===== ICONOS MINIMALISTAS ===== */
+    .icon {
+      width: 18px;
+      height: 18px;
+      vertical-align: -3px;
+      margin-right: 0.5rem;
+      stroke: var(--accent);
+    }
+
+    .contact p {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0.4rem 0;
+    }
+
+    /* ===== CERTIFICACIONES ===== */
+    .cert {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+    }
+
+    .azure-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
     }
 
     footer {
@@ -116,9 +145,7 @@
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 
@@ -137,37 +164,64 @@
 </section>
 
 <section>
-  <h2 id="skills-title"></h2>
-  <div class="grid grid-3">
+  <h2 id="experience-title"></h2>
+  <div class="grid grid-2">
+
     <div class="card">
-      <h3 id="skill1-title"></h3>
-      <ul id="skill1-list"></ul>
+      <h3>SAS Institute</h3>
+      <div class="role">Administrador de sistemas · 2021 – 2023</div>
+      <ul id="sas"></ul>
     </div>
+
     <div class="card">
-      <h3 id="skill2-title"></h3>
-      <ul id="skill2-list"></ul>
+      <h3>UFP España</h3>
+      <div class="role">Administración de sistemas y gestión técnica · 2023 – 2024</div>
+      <ul id="ufp"></ul>
     </div>
+
     <div class="card">
-      <h3 id="skill3-title"></h3>
-      <ul id="skill3-list"></ul>
+      <h3>Héroux-Devtek (CESA)</h3>
+      <div class="role">Administrador de sistemas y seguridad · 2024 – Actualidad</div>
+      <ul id="heroux"></ul>
     </div>
+
   </div>
 </section>
 
 <section>
   <h2 id="certs-title"></h2>
   <div class="grid grid-2">
-    <div class="card">AZ-104 · Azure Administrator</div>
-    <div class="card">AZ-500 · Azure Security Engineer</div>
+    <div class="card cert">
+      <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
+        <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
+      </svg>
+      AZ-104 · Azure Administrator
+    </div>
+
+    <div class="card cert">
+      <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
+        <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
+      </svg>
+      AZ-500 · Azure Security Engineer
+    </div>
   </div>
 </section>
 
 <section>
   <h2 id="contact-title"></h2>
-  <div class="card">
-    <p>📍 Madrid, Spain</p>
-    <p>📧 <a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a></p>
-    <p>📞 +34 722 764 060</p>
+  <div class="card contact">
+    <p>
+      <svg class="icon" fill="none" viewBox="0 0 24 24"><path stroke-width="1.8" d="M12 11.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path stroke-width="1.8" d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z"/></svg>
+      Madrid, España
+    </p>
+    <p>
+      <svg class="icon" fill="none" viewBox="0 0 24 24"><path stroke-width="1.8" d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L9 10a16 16 0 0 0 5 5l.9-.9a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6a2 2 0 0 1 1.7 2Z"/></svg>
+      +34 722 764 060
+    </p>
+    <p>
+      <svg class="icon" fill="none" viewBox="0 0 24 24"><path stroke-width="1.8" d="M4 4h16v16H4z"/><path stroke-width="1.8" d="m22 6-10 7L2 6"/></svg>
+      <a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a>
+    </p>
   </div>
 </section>
 
@@ -182,61 +236,72 @@
     es: {
       hero: "Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en seguridad, automatización y entornos empresariales.",
       profileTitle: "Perfil profesional",
-      profileText: "Administrador de sistemas con experiencia en infraestructuras híbridas, seguridad IT, automatización con PowerShell y soporte a entornos corporativos críticos.",
-      skillsTitle: "Especialización técnica",
-      skill1: {
-        title: "Infraestructura",
-        items: ["Windows Server", "On-premise", "VPN y redes", "Monitorización"]
-      },
-      skill2: {
-        title: "Microsoft Azure",
-        items: ["Azure AD / Entra ID", "VMs", "Redes", "Entornos híbridos"]
-      },
-      skill3: {
-        title: "Seguridad",
-        items: ["Hardening", "Firewalls", "PowerShell", "Automatización"]
-      },
+      profileText: "Administrador de sistemas con experiencia en infraestructuras híbridas, seguridad IT, automatización con PowerShell y soporte a entornos corporativos y regulados.",
+      experienceTitle: "Experiencia profesional",
       certsTitle: "Certificaciones",
-      contactTitle: "Contacto"
+      contactTitle: "Contacto",
+      sas: [
+        "Gestión de redes locales, VPN y reglas de firewall",
+        "Automatización y scripting con PowerShell",
+        "Administración de servicios, bases de datos y entornos web",
+        "Auditorías y cumplimiento de estándares internos"
+      ],
+      ufp: [
+        "Automatización de servicios e implantación de seguridad",
+        "Gestión del área de soporte técnico",
+        "Documentación de procesos en entorno aeronáutico",
+        "Cumplimiento normativo y auditorías"
+      ],
+      heroux: [
+        "Administración y monitorización de sistemas y seguridad",
+        "Despliegue y mantenimiento de aplicaciones empresariales",
+        "Gestión de entornos híbridos",
+        "Auditorías departamentales y compliance"
+      ]
     },
     en: {
       hero: "Hybrid on-premise and Microsoft Azure systems administrator focused on security, automation and enterprise environments.",
       profileTitle: "Professional profile",
-      profileText: "Systems administrator experienced in hybrid infrastructures, IT security, PowerShell automation and enterprise-grade environments.",
-      skillsTitle: "Technical expertise",
-      skill1: {
-        title: "Infrastructure",
-        items: ["Windows Server", "On-premise", "VPN & networking", "Monitoring"]
-      },
-      skill2: {
-        title: "Microsoft Azure",
-        items: ["Azure AD / Entra ID", "Virtual Machines", "Networking", "Hybrid setups"]
-      },
-      skill3: {
-        title: "Security",
-        items: ["Hardening", "Firewalls", "PowerShell", "Automation"]
-      },
+      profileText: "Systems administrator experienced in hybrid infrastructures, IT security, PowerShell automation and regulated enterprise environments.",
+      experienceTitle: "Professional experience",
       certsTitle: "Certifications",
-      contactTitle: "Contact"
+      contactTitle: "Contact",
+      sas: [
+        "Local networks, VPN and firewall rules management",
+        "PowerShell automation and scripting",
+        "Administration of services, databases and web environments",
+        "Internal audits and compliance"
+      ],
+      ufp: [
+        "Service automation and security implementation",
+        "Technical support management",
+        "Process documentation in aeronautical environment",
+        "Regulatory compliance and audits"
+      ],
+      heroux: [
+        "Systems administration and security monitoring",
+        "Enterprise application deployment and maintenance",
+        "Hybrid infrastructure management",
+        "Departmental audits and compliance"
+      ]
     }
   };
 
   const c = content[lang];
-
   document.documentElement.lang = lang;
+
   document.getElementById("hero").textContent = c.hero;
   document.getElementById("profile-title").textContent = c.profileTitle;
   document.getElementById("profile-text").textContent = c.profileText;
-  document.getElementById("skills-title").textContent = c.skillsTitle;
+  document.getElementById("experience-title").textContent = c.experienceTitle;
   document.getElementById("certs-title").textContent = c.certsTitle;
   document.getElementById("contact-title").textContent = c.contactTitle;
 
-  [["skill1","skill2","skill3"]].flat().forEach((s,i)=>{
-    document.getElementById(`${s}-title`).textContent = c[s].title;
-    c[s].items.forEach(item=>{
-      const li=document.createElement("li");
-      li.textContent=item;
-      document.getElementById(`${s}-list`).appendChild(li);
+  ["sas","ufp","heroux"].forEach(id => {
+    c[id].forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById(id).appendChild(li);
     });
   });
 
