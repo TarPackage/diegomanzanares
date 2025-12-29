@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Diego Manzanares | Systems & Cloud Administrator</title>
+  <title>Diego Manzanares | Administrador de Sistemas y Cloud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hybrid on-premise & Azure Systems Administrator. Security, automation and enterprise environments. AZ-104 & AZ-500 certified.">
+  <meta name="description" content="Administrador de sistemas híbridos on-premise y Microsoft Azure. Seguridad, automatización y entornos empresariales. Certificado AZ-104 y AZ-500.">
   <link rel="icon" href="web-icon.ico" type="image/x-icon">
 
   <style>
@@ -169,45 +169,66 @@
 
 <header class="hero">
   <h1 id="typewriter"></h1>
-  <p id="hero-text"></p>
+  <p>
+    Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en
+    seguridad, automatización y entornos empresariales.
+  </p>
 </header>
 
 <section>
-  <h2 id="profile-title"></h2>
+  <h2>Perfil profesional</h2>
   <div class="card">
-    <p id="profile-text"></p>
+    <p>
+      Administrador de sistemas con experiencia en infraestructuras híbridas,
+      seguridad IT, automatización con PowerShell y entornos corporativos regulados.
+    </p>
   </div>
 </section>
 
 <section>
-  <h2 id="experience-title"></h2>
+  <h2>Experiencia profesional</h2>
   <div class="grid">
 
     <div class="card">
       <h3>SAS Institute</h3>
-      <div class="role" id="sas-role"></div>
-      <ul id="sas"></ul>
+      <div class="role">Administrador de sistemas · 2021 – 2023</div>
+      <ul>
+        <li>Gestión de redes, VPN y reglas de firewall</li>
+        <li>Automatización con PowerShell</li>
+        <li>Administración de servicios web</li>
+        <li>Auditorías y cumplimiento</li>
+      </ul>
     </div>
 
     <div class="card">
       <h3>UFP España</h3>
-      <div class="role" id="ufp-role"></div>
-      <ul id="ufp"></ul>
+      <div class="role">Administración de sistemas y gestión técnica · 2023 – 2024</div>
+      <ul>
+        <li>Automatización y seguridad</li>
+        <li>Gestión del soporte técnico</li>
+        <li>Documentación aeronáutica</li>
+        <li>Cumplimiento normativo</li>
+      </ul>
     </div>
 
     <div class="card">
       <h3>Héroux-Devtek (CESA)</h3>
-      <div class="role" id="heroux-role"></div>
-      <ul id="heroux"></ul>
+      <div class="role">Administrador de sistemas y seguridad · 2024 – Actualidad</div>
+      <ul>
+        <li>Administración y monitorización</li>
+        <li>Seguridad y hardening</li>
+        <li>Entornos híbridos</li>
+        <li>Auditorías y compliance</li>
+      </ul>
     </div>
 
   </div>
 </section>
 
 <section>
-  <h2 id="certs-title"></h2>
+  <h2>Certificaciones y documentos</h2>
   <div class="grid">
-    <!-- AZ-104 -->
+
     <div class="card cert">
       <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
         <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
@@ -215,7 +236,6 @@
       AZ-104 · Azure Administrator
     </div>
 
-    <!-- AZ-500 -->
     <div class="card cert">
       <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
         <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
@@ -223,18 +243,18 @@
       AZ-500 · Azure Security Engineer
     </div>
 
-    <!-- Europass -->
     <div class="card cert">
       <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
-        <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm1 4v12h14V6H5zm2 2h10v2H7V8zm0 4h10v2H7v-2z"/>
+        <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
       </svg>
       <a href="europass-dmg.pdf" target="_blank">Europass</a>
     </div>
+
   </div>
 </section>
 
 <section>
-  <h2 id="contact-title"></h2>
+  <h2>Contacto</h2>
   <div class="grid">
 
     <div class="card contact-item">
@@ -269,78 +289,13 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const lang = (navigator.languages && navigator.languages[0] || navigator.language || "en").toLowerCase();
-    const es = lang.startsWith("es");
-
-    const t = es ? {
-      greeting: "Hola, soy Diego Manzanares 👋",
-      hero: "Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en seguridad, automatización y entornos empresariales.",
-      profileTitle: "Perfil profesional",
-      profileText: "Administrador de sistemas con experiencia en infraestructuras híbridas, seguridad IT, automatización con PowerShell y entornos corporativos regulados.",
-      experienceTitle: "Experiencia profesional",
-      certsTitle: "Certificaciones y documentos",
-      contactTitle: "Contacto",
-      roles: {
-        sas: "Administrador de sistemas · 2021 – 2023",
-        ufp: "Administración de sistemas y gestión técnica · 2023 – 2024",
-        heroux: "Administrador de sistemas y seguridad · 2024 – Actualidad"
-      },
-      sas: [
-        "Gestión de redes, VPN y reglas de firewall",
-        "Automatización con PowerShell",
-        "Administración de servicios web",
-        "Auditorías y cumplimiento"
-      ],
-      ufp: [
-        "Automatización y seguridad",
-        "Gestión del soporte técnico",
-        "Documentación aeronáutica",
-        "Cumplimiento normativo"
-      ],
-      heroux: [
-        "Administración y monitorización",
-        "Seguridad y hardening",
-        "Entornos híbridos",
-        "Auditorías y compliance"
-      ]
-    } : {
-      greeting: "Hi, I'm Diego Manzanares 👋",
-      hero: "Hybrid on-premise and Microsoft Azure systems administrator focused on security, automation and enterprise environments.",
-      profileTitle: "Professional profile",
-      profileText: "Systems administrator experienced in hybrid infrastructures, IT security, PowerShell automation and regulated enterprise environments.",
-      experienceTitle: "Professional experience",
-      certsTitle: "Certifications & documents",
-      contactTitle: "Contact",
-      roles: {
-        sas: "Systems Administrator · 2021 – 2023",
-        ufp: "Systems Administration & Technical Management · 2023 – 2024",
-        heroux: "Systems & Security Administrator · 2024 – Present"
-      },
-      sas: [
-        "Network, VPN and firewall management",
-        "PowerShell automation",
-        "Web services administration",
-        "Audits and compliance"
-      ],
-      ufp: [
-        "Automation and security",
-        "Technical support management",
-        "Aeronautical documentation",
-        "Regulatory compliance"
-      ],
-      heroux: [
-        "Systems administration and monitoring",
-        "Security and hardening",
-        "Hybrid environments",
-        "Audits and compliance"
-      ]
-    };
-
+    const text = "Hola, soy Diego Manzanares 👋";
     const target = document.getElementById("typewriter");
     let i = 0;
+
     (function type() {
-      if (i < t.greeting.length) {
-        target.textContent += t.greeting.charAt(i++);
+      if (i < text.length) {
+        target.textContent += text.charAt(i++);
         setTimeout(type, 60);
       } else {
         const cursor = document.createElement("span");
@@ -348,26 +303,6 @@
         target.appendChild(cursor);
       }
     })();
-
-    document.documentElement.lang = es ? "es" : "en";
-    document.getElementById("hero-text").textContent = t.hero;
-    document.getElementById("profile-title").textContent = t.profileTitle;
-    document.getElementById("profile-text").textContent = t.profileText;
-    document.getElementById("experience-title").textContent = t.experienceTitle;
-    document.getElementById("certs-title").textContent = t.certsTitle;
-    document.getElementById("contact-title").textContent = t.contactTitle;
-
-    document.getElementById("sas-role").textContent = t.roles.sas;
-    document.getElementById("ufp-role").textContent = t.roles.ufp;
-    document.getElementById("heroux-role").textContent = t.roles.heroux;
-
-    ["sas","ufp","heroux"].forEach(id => {
-      t[id].forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        document.getElementById(id).appendChild(li);
-      });
-    });
 
     document.getElementById("year").textContent = new Date().getFullYear();
   });
