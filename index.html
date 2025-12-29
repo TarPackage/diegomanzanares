@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -93,15 +92,11 @@
     }
 
     @media (min-width: 640px) {
-      .grid-exp {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .grid-exp { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (min-width: 1024px) {
-      .grid-exp {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .grid-exp { grid-template-columns: repeat(3, 1fr); }
     }
 
     .card {
@@ -130,6 +125,22 @@
 
     li { margin-bottom: 0.45rem; }
 
+    /* ===== CONTACT ICONS ===== */
+    .contact p {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.45rem 0;
+      color: var(--muted);
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent);
+      flex-shrink: 0;
+    }
+
     .cert {
       display: flex;
       align-items: center;
@@ -140,11 +151,6 @@
     .azure-icon {
       width: 22px;
       height: 22px;
-    }
-
-    .contact p {
-      margin: 0.4rem 0;
-      color: var(--muted);
     }
 
     footer {
@@ -221,9 +227,26 @@
 <section>
   <h2 id="contact-title"></h2>
   <div class="card contact">
-    <p>Madrid, España</p>
-    <p>+34 722 764 060</p>
-    <p><a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a></p>
+    <p>
+      <svg class="icon" fill="none" viewBox="0 0 24 24">
+        <path stroke-width="1.8" d="M12 11.5a3 3 0 1 0 0-6Z"/>
+        <path stroke-width="1.8" d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z"/>
+      </svg>
+      Madrid, España
+    </p>
+    <p>
+      <svg class="icon" fill="none" viewBox="0 0 24 24">
+        <path stroke-width="1.8" d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7"/>
+      </svg>
+      +34 722 764 060
+    </p>
+    <p>
+      <svg class="icon" fill="none" viewBox="0 0 24 24">
+        <path stroke-width="1.8" d="M4 4h16v16H4z"/>
+        <path stroke-width="1.8" d="m22 6-10 7L2 6"/>
+      </svg>
+      <a href="mailto:diego.dmg23@icloud.com">diego.dmg23@icloud.com</a>
+    </p>
   </div>
 </section>
 
@@ -300,24 +323,19 @@
       ]
     };
 
-    // Typewriter effect
-    const text = t.greeting;
+    // Typewriter
     const target = document.getElementById("typewriter");
     let i = 0;
-
-    function type() {
-      if (i < text.length) {
-        target.textContent += text.charAt(i);
-        i++;
+    (function type() {
+      if (i < t.greeting.length) {
+        target.textContent += t.greeting.charAt(i++);
         setTimeout(type, 65);
       } else {
         const cursor = document.createElement("span");
         cursor.className = "cursor";
         target.appendChild(cursor);
       }
-    }
-
-    type();
+    })();
 
     document.documentElement.lang = es ? "es" : "en";
     document.getElementById("hero-text").textContent = t.hero;
