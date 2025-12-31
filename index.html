@@ -146,18 +146,15 @@
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
       transition: none;
-      /* Prioridad máxima para calidad */
       image-rendering: auto;
     }
 
-    /* Mejora específica para navegadores */
     .hero-image img {
       image-rendering: -moz-crisp-edges;
       image-rendering: -o-crisp-edges;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
       image-rendering: pixelated;
-      /* Fallback para máxima calidad */
       image-rendering: auto;
     }
 
@@ -222,23 +219,36 @@
       grid-template-columns: 1fr;
     }
 
-    /* Tablets: mantener una columna para evitar espacios */
-    @media (min-width: 640px) and (max-width: 899px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    /* EXPERIENCIA PROFESIONAL: 1 columna en móviles/tablets, 3 en escritorio */
+    #experiencia .grid {
+      grid-template-columns: 1fr;
     }
 
-    /* Tablets grandes/Desktop pequeño: 2 columnas */
-    @media (min-width: 900px) and (max-width: 1023px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* Desktop: 3 columnas */
     @media (min-width: 1024px) {
-      .grid {
+      #experiencia .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* HABILIDADES TÉCNICAS: 1 columna en móviles/tablets, 3 en escritorio */
+    #habilidades .grid {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      #habilidades .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* CERTIFICACIONES: 1 columna en móviles, 3 en tablets y escritorio */
+    #certificaciones .grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      #certificaciones .grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -257,6 +267,16 @@
       border-color: var(--accent);
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    /* Card de perfil sin hover */
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
     }
 
     .card h3 {
@@ -278,11 +298,6 @@
     }
 
     li { margin-bottom: 0.45rem; }
-
-    /* CERTIFICACIONES - Grid con altura uniforme */
-    #certificaciones .grid {
-      grid-auto-rows: 1fr;
-    }
 
     /* CERTIFICACIONES - Altura uniforme */
     .cert-link {
@@ -416,6 +431,57 @@
       outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
+
+    /* ANIMACIONES PARALLAX */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .fade-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .scale-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Delays para efectos escalonados */
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
   </style>
 </head>
 
@@ -451,17 +517,17 @@
 
 <main>
   <section id="perfil">
-    <h2 data-i18n="sections.profile">Perfil profesional</h2>
-    <div class="card" data-i18n="profile.text">
+    <h2 class="fade-in-left" data-i18n="sections.profile">Perfil profesional</h2>
+    <div class="profile-card fade-in" data-i18n="profile.text">
       Administrador de sistemas y seguridad con experiencia en infraestructuras híbridas, redes, identidad, automatización y cumplimiento en entornos corporativos regulados. 
       Orientado a la fiabilidad del servicio, la mejora continua y la estandarización de procesos.
     </div>
   </section>
 
   <section id="experiencia">
-    <h2 data-i18n="sections.experience">Experiencia profesional</h2>
+    <h2 class="fade-in-left" data-i18n="sections.experience">Experiencia profesional</h2>
     <div class="grid">
-      <div class="card">
+      <div class="card fade-in delay-100">
         <h3>SAS Institute</h3>
         <div class="role" data-i18n="exp.sas.role">Administrador de sistemas · Mar 2021 – Abr 2023</div>
         <ul>
@@ -473,7 +539,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card fade-in delay-200">
         <h3>UFP España</h3>
         <div class="role" data-i18n="exp.ufp.role">Administrador de sistemas y soporte técnico · Abr 2023 – Abr 2024</div>
         <ul>
@@ -484,7 +550,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card fade-in delay-300">
         <h3>Héroux-Devtek (CESA)</h3>
         <div class="role" data-i18n="exp.cesa.role">Administrador de sistemas y seguridad · Abr 2024 – Actualidad</div>
         <ul>
@@ -498,9 +564,9 @@
   </section>
 
   <section id="habilidades">
-    <h2 data-i18n="sections.skills">Habilidades técnicas</h2>
+    <h2 class="fade-in-right" data-i18n="sections.skills">Habilidades técnicas</h2>
     <div class="grid">
-      <div class="card">
+      <div class="card scale-in delay-100">
         <h3 data-i18n="skills.azure.title">Microsoft Azure</h3>
         <ul>
           <li data-i18n="skills.azure.li1">Administración de recursos Azure: cómputo, almacenamiento y redes.</li>
@@ -514,7 +580,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card scale-in delay-200">
         <h3 data-i18n="skills.security.title">Seguridad y cumplimiento</h3>
         <ul>
           <li data-i18n="skills.security.li1">Hardening de sistemas Windows y servicios on-premise y cloud.</li>
@@ -529,7 +595,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card scale-in delay-300">
         <h3 data-i18n="skills.infra.title">Infraestructura y automatización</h3>
         <ul>
           <li data-i18n="skills.infra.li1">Administración de Windows Server, Active Directory y GPO.</li>
@@ -547,9 +613,9 @@
   </section>
 
   <section id="certificaciones">
-    <h2 data-i18n="sections.certs">Certificaciones y documentos</h2>
+    <h2 class="fade-in-left" data-i18n="sections.certs">Certificaciones y documentos</h2>
     <div class="grid">
-      <a class="cert-link" target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/api/credentials/share/en-us/DiegoManzanaresGarca-8833/330E5498A7C91372?sharingId=595A0C2295E164AD">
+      <a class="cert-link fade-in-right delay-100" target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/api/credentials/share/en-us/DiegoManzanaresGarca-8833/330E5498A7C91372?sharingId=595A0C2295E164AD">
         <div class="card cert">
           <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
             <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
@@ -560,7 +626,7 @@
         </div>
       </a>
 
-      <a class="cert-link" target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/api/credentials/share/en-us/DiegoManzanaresGarca-8833/24917C31251ED74E?sharingId=595A0C2295E164AD">
+      <a class="cert-link fade-in-right delay-200" target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/api/credentials/share/en-us/DiegoManzanaresGarca-8833/24917C31251ED74E?sharingId=595A0C2295E164AD">
         <div class="card cert">
           <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
             <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
@@ -571,7 +637,7 @@
         </div>
       </a>
 
-      <a class="cert-link" target="_blank" rel="noopener noreferrer" href="europass-dmg.pdf">
+      <a class="cert-link fade-in-right delay-300" target="_blank" rel="noopener noreferrer" href="europass-dmg.pdf">
         <div class="card cert">
           <svg class="azure-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8">
             <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
@@ -588,9 +654,9 @@
   </section>
 
   <section id="contacto">
-    <h2 data-i18n="sections.contact">Contacto</h2>
+    <h2 class="fade-in" data-i18n="sections.contact">Contacto</h2>
     <div class="contact-grid">
-      <div class="card contact-item">
+      <div class="card contact-item fade-in delay-100">
         <svg class="icon" viewBox="0 0 24 24" fill="none">
           <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/>
           <circle cx="12" cy="10" r="2.5"/>
@@ -598,7 +664,7 @@
         <span data-i18n="contact.location">Madrid, España</span>
       </div>
 
-      <div class="card contact-item">
+      <div class="card contact-item fade-in delay-200">
         <svg class="icon" viewBox="0 0 24 24" fill="none">
           <path d="M22 16.9v3a2 2 0 0 1-2.2 2
                    19.8 19.8 0 0 1-8.6-3.1
@@ -616,7 +682,7 @@
         <span data-i18n="contact.phone">+34 722 764 060</span>
       </div>
 
-      <div class="card contact-item">
+      <div class="card contact-item fade-in delay-300">
         <svg class="icon" viewBox="0 0 24 24" fill="none">
           <rect x="3" y="5" width="18" height="14" rx="2"/>
           <path d="M3 7l9 6 9-6"/>
@@ -627,7 +693,7 @@
   </section>
 </main>
 
-<footer>
+<footer class="fade-in">
   <span id="footer-text">
     © <span id="year"></span> Diego Manzanares
   </span>
@@ -760,7 +826,7 @@
 
   function applyTranslations(langCode) {
     if (!langCode.startsWith("en")) {
-      return; // por defecto se muestra español
+      return;
     }
     const t = translations.en;
 
@@ -786,11 +852,35 @@
     if (heroSub2) heroSub2.textContent = t.hero.subtitle2;
   }
 
+  // Intersection Observer para animaciones parallax
+  function setupScrollAnimations() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observar todos los elementos con clases de animación
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const lang = getBrowserLang();
     applyTranslations(lang);
 
-    // Typewriter, usando idioma detectado
+    // Inicializar animaciones de scroll
+    setupScrollAnimations();
+
+    // Typewriter
     const el = document.getElementById("typewriter");
     const textEn = el.getAttribute("data-text-en");
     const textDefault = "Hola, soy Diego Manzanares 👋";
