@@ -219,14 +219,28 @@
     .grid {
       display: grid;
       gap: 1.5rem;
+      grid-template-columns: 1fr;
     }
 
-    @media (min-width: 640px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
+    /* Tablets: mantener una columna para evitar espacios */
+    @media (min-width: 640px) and (max-width: 899px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
+    /* Tablets grandes/Desktop pequeño: 2 columnas */
+    @media (min-width: 900px) and (max-width: 1023px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Desktop: 3 columnas */
     @media (min-width: 1024px) {
-      .grid { grid-template-columns: repeat(3, 1fr); }
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .card {
