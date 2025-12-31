@@ -230,35 +230,62 @@
       grid-template-columns: 1fr;
     }
 
-    /* EXPERIENCIA PROFESIONAL: 1 columna en móviles/tablets, 3 en escritorio */
+    /* EXPERIENCIA PROFESIONAL */
+    /* Móvil: 1 columna */
     #experiencia .grid {
       grid-template-columns: 1fr;
     }
 
+    /* Tablet: 1 columna */
+    @media (min-width: 640px) and (max-width: 1023px) {
+      #experiencia .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Escritorio: 3 columnas */
     @media (min-width: 1024px) {
       #experiencia .grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    /* HABILIDADES TÉCNICAS: 1 columna en móviles/tablets, 3 en escritorio */
+    /* HABILIDADES TÉCNICAS */
+    /* Móvil: 1 columna */
     #habilidades .grid {
       grid-template-columns: 1fr;
     }
 
+    /* Tablet: 1 columna */
+    @media (min-width: 640px) and (max-width: 1023px) {
+      #habilidades .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Escritorio: 3 columnas */
     @media (min-width: 1024px) {
       #habilidades .grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    /* CERTIFICACIONES: 1 columna en móviles, 3 en tablets y escritorio */
+    /* CERTIFICACIONES */
+    /* Móvil: 1 columna */
     #certificaciones .grid {
       grid-template-columns: 1fr;
       grid-auto-rows: 1fr;
     }
 
-    @media (min-width: 640px) {
+    /* Tablet: 1 columna */
+    @media (min-width: 640px) and (max-width: 1023px) {
+      #certificaciones .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Escritorio: 3 columnas */
+    @media (min-width: 1024px) {
       #certificaciones .grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -362,8 +389,10 @@
     .contact-grid {
       display: grid;
       gap: 1.5rem;
+      grid-template-columns: 1fr;
     }
 
+    /* CONTACTO - 3 columnas en tablet y escritorio */
     @media (min-width: 640px) {
       .contact-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -672,7 +701,7 @@
           <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/>
           <circle cx="12" cy="10" r="2.5"/>
         </svg>
-        <span data-i18n="contact.location">Madrid, España</span>
+        <a href="https://www.google.com/maps/place/Madrid" target="_blank" rel="noopener noreferrer" data-i18n="contact.location">Madrid, España</a>
       </div>
 
       <div class="card contact-item fade-in delay-200">
