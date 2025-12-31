@@ -44,7 +44,7 @@
       padding: 0 1.25rem;
     }
 
-    /* HEADER STICKY */
+    /* HEADER STICKY + GLASS */
     header {
       position: sticky;
       top: 0;
@@ -55,15 +55,19 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      background: var(--bg);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+      /* Efecto glass */
+      background: rgba(15, 23, 42, 0.45);         /* fondo semitransparente */
+      backdrop-filter: blur(14px) saturate(150%); /* desenfoque + saturación */
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: 0 0 18px 18px;
     }
 
     .logo {
       font-weight: 600;
       letter-spacing: 0.03em;
       font-size: 1rem;
+      color: #e5e7eb;
     }
 
     .logo span {
@@ -84,7 +88,7 @@
       }
 
       nav a {
-        color: var(--muted);
+        color: #e5e7eb;
         text-decoration: none;
         position: relative;
         padding-bottom: 2px;
