@@ -176,6 +176,8 @@
       border-radius: 14px;
       padding: 1.6rem;
       transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
@@ -199,13 +201,17 @@
     ul {
       padding-left: 1.2rem;
       margin: 0.5rem 0 0;
+      flex-grow: 1;
     }
 
     li { margin-bottom: 0.45rem; }
 
+    /* CERTIFICACIONES - Altura uniforme */
     .cert-link {
       text-decoration: none;
       color: inherit;
+      height: 100%;
+      display: flex;
     }
 
     .cert {
@@ -214,12 +220,22 @@
       gap: 0.75rem;
       font-weight: 500;
       cursor: pointer;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.2rem;
     }
 
     .azure-icon {
       width: 22px;
       height: 22px;
       stroke: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cert-text {
+      text-align: center;
+      line-height: 1.3;
     }
 
     .tags {
@@ -454,7 +470,9 @@
           <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
             <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
           </svg>
-          <span data-i18n="certs.az104">AZ-104 · Azure Administrator</span>
+          <div class="cert-text">
+            <span data-i18n="certs.az104">AZ-104 · Azure Administrator</span>
+          </div>
         </div>
       </a>
 
@@ -463,7 +481,9 @@
           <svg class="azure-icon" viewBox="0 0 24 24" fill="#0078D4">
             <path d="M3 17.25L9.75 3h5.25L9 17.25H3zm6.75 0H21l-6-9.75-5.25 9.75z"/>
           </svg>
-          <span data-i18n="certs.az500">AZ-500 · Azure Security Engineer</span>
+          <div class="cert-text">
+            <span data-i18n="certs.az500">AZ-500 · Azure Security Engineer</span>
+          </div>
         </div>
       </a>
 
@@ -475,7 +495,9 @@
             <path d="M8 11h8"/>
             <path d="M8 15h8"/>
           </svg>
-          <span data-i18n="certs.europass">Europass</span>
+          <div class="cert-text">
+            <span data-i18n="certs.europass">Europass</span>
+          </div>
         </div>
       </a>
     </div>
