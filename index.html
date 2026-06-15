@@ -2,33 +2,33 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Diego Manzanares | SysAdmin, Azure Administrator</title>
+  <title>Diego Manzanares | Administrador de Sistemas, Cloud y Seguridad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Meta SEO mejorada -->
-  <meta name="description" content="SysAdmin y Azure Administrator especializado en seguridad, PowerShell y entornos híbridos on-premise y cloud en Madrid.">
-  <meta name="keywords" content="sysadmin, system administrator, azure administrator, cloud, Microsoft Azure, PowerShell, Windows Server, Active Directory, seguridad, Madrid">
+  <meta name="description" content="Administrador de sistemas y seguridad especializado en entornos cloud e híbridos, automatización con PowerShell, Active Directory, Entra ID y tecnologías Microsoft.">
+  <meta name="keywords" content="administrador de sistemas, system administrator, cloud administrator, azure administrator, seguridad, PowerShell, Active Directory, Entra ID, Windows Server, Madrid">
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YKBMLDT22X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKBMLDT22X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YKBMLDT22X');
+  </script>
 
-  gtag('config', 'G-YKBMLDT22X');
-</script>
-
-  <meta name="description" content="Administrador de sistemas híbridos on-premise y Microsoft Azure. Seguridad, automatización con PowerShell, entornos regulados y corporativos.">
   <link rel="icon" href="web-icon.ico" type="image/x-icon">
 
-  <!-- Schema.org Persona -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Diego Manzanares",
-    "jobTitle": ["SysAdmin", "System Administrator", "Azure Administrator"],
+    "jobTitle": [
+      "Administrador de Sistemas",
+      "Cloud Administrator",
+      "System Administrator",
+      "Administrador de Sistemas y Seguridad"
+    ],
     "url": "https://diegomanzanares.tech",
     "sameAs": [
       "https://www.linkedin.com/in/diego-manzanares-garcía/",
@@ -36,15 +36,16 @@
     ],
     "knowsAbout": [
       "Microsoft Azure",
-      "Azure Administration",
-      "Azure Security",
       "Windows Server",
       "Active Directory",
+      "Microsoft Entra ID",
       "PowerShell",
       "System Administration",
       "Cloud Security",
-      "On-premise Infrastructure",
-      "Hybrid Cloud"
+      "Hybrid Infrastructure",
+      "VPN",
+      "Firewall",
+      "Technical Support"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -91,7 +92,6 @@
       padding: 0 1.25rem;
     }
 
-    /* HEADER STICKY + GLASS - MODO CLARO */
     header {
       position: sticky;
       top: 0;
@@ -110,7 +110,6 @@
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
     }
 
-    /* HEADER STICKY + GLASS - MODO OSCURO */
     @media (prefers-color-scheme: dark) {
       header {
         background: rgba(15, 23, 42, 0.45);
@@ -130,12 +129,10 @@
       color: var(--accent);
     }
 
-    /* Mobile / tablet: solo logo, sin menú */
     nav {
       display: none;
     }
 
-    /* Escritorio: mostramos el menú junto al logo */
     @media (min-width: 1024px) {
       nav {
         display: flex;
@@ -201,18 +198,6 @@
       border-radius: 16px;
       border: 4px solid var(--card);
       box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      transition: none;
-      image-rendering: auto;
-    }
-
-    .hero-image img {
-      image-rendering: -moz-crisp-edges;
-      image-rendering: -o-crisp-edges;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      image-rendering: pixelated;
       image-rendering: auto;
     }
 
@@ -277,53 +262,15 @@
       grid-template-columns: 1fr;
     }
 
-    /* EXPERIENCIA PROFESIONAL */
-    #experiencia .grid {
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 640px) and (max-width: 1023px) {
-      #experiencia .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      #experiencia .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* HABILIDADES TÉCNICAS */
-    #habilidades .grid {
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 640px) and (max-width: 1023px) {
-      #habilidades .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      #habilidades .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* CERTIFICACIONES */
+    #experiencia .grid,
+    #habilidades .grid,
     #certificaciones .grid {
       grid-template-columns: 1fr;
-      grid-auto-rows: 1fr;
-    }
-
-    @media (min-width: 640px) and (max-width: 1023px) {
-      #certificaciones .grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (min-width: 1024px) {
+      #experiencia .grid,
+      #habilidades .grid,
       #certificaciones .grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -577,10 +524,10 @@
   <div class="hero-content">
     <h1 id="typewriter" data-i18n-hero></h1>
     <p data-i18n="hero.subtitle1">
-      Administrador de sistemas híbridos on-premise y Microsoft Azure, especializado en seguridad, automatización con PowerShell y entornos empresariales regulados.
+      Administrador de sistemas y seguridad especializado en entornos cloud e híbridos, automatización con PowerShell, gestión de identidades y tecnologías Microsoft.
     </p>
     <p data-i18n="hero.subtitle2">
-      Actualmente trabajando como administrador de sistemas y seguridad en entornos cloud y on-premise.
+      Experiencia en soporte técnico, infraestructura corporativa, seguridad informática y documentación de procesos en entornos exigentes y regulados.
     </p>
   </div>
   <div class="hero-image">
@@ -592,8 +539,8 @@
   <section id="perfil">
     <h2 class="fade-in-left" data-i18n="sections.profile">Perfil profesional</h2>
     <div class="profile-card fade-in" data-i18n="profile.text">
-      Administrador de sistemas y seguridad con experiencia en infraestructuras híbridas, redes, identidad, automatización y cumplimiento en entornos corporativos regulados. 
-      Orientado a la fiabilidad del servicio, la mejora continua y la estandarización de procesos.
+      Administrador de sistemas con experiencia en infraestructura cloud y on-premise, seguridad informática, automatización, redes, soporte técnico y gestión de identidades. 
+      Perfil orientado a la estabilidad del servicio, la resolución de incidencias, la mejora continua y la estandarización de procesos en entornos corporativos.
     </div>
   </section>
 
@@ -601,24 +548,24 @@
     <h2 class="fade-in-left" data-i18n="sections.experience">Experiencia profesional</h2>
     <div class="grid">
       <div class="card fade-in delay-100">
-        <h3>Héroux-Devtek (CESA)</h3>
-        <div class="role" data-i18n="exp.cesa.role">Administrador de sistemas y seguridad · Abr 2024 – Actualidad</div>
+        <h3>CESA / Héroux-Devtek</h3>
+        <div class="role" data-i18n="exp.cesa.role">Administrador de sistemas y gestión técnica · Abr 2024 – Actualidad</div>
         <ul>
-          <li data-i18n="exp.cesa.li1">Administración y monitorización de entornos híbridos on-premise y Azure.</li>
-          <li data-i18n="exp.cesa.li2">Endurecimiento de sistemas, gestión de identidades y controles de acceso.</li>
-          <li data-i18n="exp.cesa.li3">Colaboración en iniciativas de seguridad y compliance en entornos regulados.</li>
-          <li data-i18n="exp.cesa.li4">Soporte a equipos internos y coordinación con otros departamentos IT.</li>
+          <li data-i18n="exp.cesa.li1">Automatización de servicios e implantación de medidas de seguridad informática.</li>
+          <li data-i18n="exp.cesa.li2">Gestión del área de soporte técnico y coordinación de tareas operativas IT.</li>
+          <li data-i18n="exp.cesa.li3">Control de recursos de dominio y gestión de identidades con ADDS y Entra ID.</li>
+          <li data-i18n="exp.cesa.li4">Documentación de procesos empresariales en entorno aeronáutico y participación en auditorías.</li>
         </ul>
       </div>
 
       <div class="card fade-in delay-200">
         <h3>UFP España</h3>
-        <div class="role" data-i18n="exp.ufp.role">Administrador de sistemas y soporte técnico · Abr 2023 – Abr 2024</div>
+        <div class="role" data-i18n="exp.ufp.role">Administrador de sistemas · Abr 2023 – Abr 2024</div>
         <ul>
-          <li data-i18n="exp.ufp.li1">Implantación de medidas de seguridad y automatización de servicios de infraestructura.</li>
-          <li data-i18n="exp.ufp.li2">Gestión del área de soporte técnico y resolución de incidencias de primer y segundo nivel.</li>
-          <li data-i18n="exp.ufp.li3">Documentación de procesos en entorno aeronáutico y mantenimiento de procedimientos.</li>
-          <li data-i18n="exp.ufp.li4">Participación en auditorías y en el cumplimiento de regulación estándar del sector.</li>
+          <li data-i18n="exp.ufp.li1">Administración y monitorización de servicios e infraestructura con foco en seguridad informática.</li>
+          <li data-i18n="exp.ufp.li2">Administración de ERP y soporte a servicios corporativos de negocio.</li>
+          <li data-i18n="exp.ufp.li3">Desarrollo y mantenimiento de entornos web y soporte técnico asociado.</li>
+          <li data-i18n="exp.ufp.li4">Participación en auditorías departamentales y cumplimiento de regulación estándar.</li>
         </ul>
       </div>
 
@@ -627,10 +574,9 @@
         <div class="role" data-i18n="exp.sas.role">Administrador de sistemas · Mar 2021 – Abr 2023</div>
         <ul>
           <li data-i18n="exp.sas.li1">Gestión de redes locales, VPN y reglas de firewall en entornos corporativos.</li>
-          <li data-i18n="exp.sas.li2">Automatización de tareas de administración con PowerShell y programación de jobs.</li>
-          <li data-i18n="exp.sas.li3">Administración de servicios web, bases de datos y aplicaciones empresariales.</li>
-          <li data-i18n="exp.sas.li4">Monitorización de servicios y seguridad informática en entornos críticos.</li>
-          <li data-i18n="exp.sas.li5">Auditorías departamentales y cumplimiento de estándares internos.</li>
+          <li data-i18n="exp.sas.li2">Automatización de tareas y scripting con PowerShell, incluyendo programación de tareas.</li>
+          <li data-i18n="exp.sas.li3">Creación de flujos de trabajo, seguimiento de incidencias y uso de herramientas de ticketing.</li>
+          <li data-i18n="exp.sas.li4">Administración de servicios de Internet, bases de datos y monitorización de sistemas.</li>
         </ul>
       </div>
     </div>
@@ -640,53 +586,54 @@
     <h2 class="fade-in-right" data-i18n="sections.skills">Habilidades técnicas</h2>
     <div class="grid">
       <div class="card scale-in delay-100">
-        <h3 data-i18n="skills.azure.title">Microsoft Azure</h3>
+        <h3 data-i18n="skills.cloud.title">Cloud y tecnologías Microsoft</h3>
         <ul>
-          <li data-i18n="skills.azure.li1">Administración de recursos Azure: cómputo, almacenamiento y redes.</li>
-          <li data-i18n="skills.azure.li2">Azure AD, identidades, grupos, roles y políticas.</li>
-          <li data-i18n="skills.azure.li3">Azure Networking: VNets, VPN, NSG, balanceadores.</li>
-          <li data-i18n="skills.azure.li4">Monitorización, backup y alta disponibilidad en Azure.</li>
+          <li data-i18n="skills.cloud.li1">Administración de entornos Microsoft Azure y servicios cloud.</li>
+          <li data-i18n="skills.cloud.li2">Gestión de identidades, control de acceso y recursos de dominio con ADDS y Entra ID.</li>
+          <li data-i18n="skills.cloud.li3">Conocimiento de infraestructura híbrida y operación de servicios corporativos.</li>
+          <li data-i18n="skills.cloud.li4">Base sólida en tecnologías Microsoft orientadas a administración de sistemas.</li>
         </ul>
         <div class="tags">
-          <span class="tag">AZ-104</span>
-          <span class="tag">AZ-500</span>
+          <span class="tag">Azure</span>
+          <span class="tag">ADDS</span>
+          <span class="tag">Entra ID</span>
         </div>
       </div>
 
       <div class="card scale-in delay-200">
-        <h3 data-i18n="skills.security.title">Seguridad y cumplimiento</h3>
+        <h3 data-i18n="skills.security.title">Seguridad, soporte y operación</h3>
         <ul>
-          <li data-i18n="skills.security.li1">Hardening de sistemas Windows y servicios on-premise y cloud.</li>
-          <li data-i18n="skills.security.li2">Gestión de accesos, MFA y políticas de seguridad.</li>
-          <li data-i18n="skills.security.li3">Auditorías internas y soporte a cumplimiento de normativas.</li>
-          <li data-i18n="skills.security.li4">Supervisión de logs y respuesta básica ante incidentes.</li>
+          <li data-i18n="skills.security.li1">Implantación de seguridad informática y administración segura de servicios.</li>
+          <li data-i18n="skills.security.li2">Monitorización, soporte técnico y resolución de incidencias.</li>
+          <li data-i18n="skills.security.li3">Participación en auditorías y documentación de procesos en entornos regulados.</li>
+          <li data-i18n="skills.security.li4">Gestión operativa de servicios críticos y continuidad del servicio.</li>
         </ul>
         <div class="tags">
-          <span class="tag">Hardening</span>
-          <span class="tag">MFA</span>
+          <span class="tag">Seguridad</span>
+          <span class="tag">Soporte técnico</span>
           <span class="tag">Auditorías</span>
         </div>
       </div>
 
       <div class="card scale-in delay-300">
-        <h3 data-i18n="skills.infra.title">Infraestructura y automatización</h3>
+        <h3 data-i18n="skills.infra.title">Infraestructura, redes y automatización</h3>
         <ul>
-          <li data-i18n="skills.infra.li1">Administración de Windows Server, Active Directory y GPO.</li>
-          <li data-i18n="skills.infra.li2">Gestión de redes locales, VPN y firewalls.</li>
-          <li data-i18n="skills.infra.li3">Scripting con PowerShell para automatizar tareas recurrentes.</li>
-          <li data-i18n="skills.infra.li4">Uso de herramientas de ticketing y documentación de procesos.</li>
+          <li data-i18n="skills.infra.li1">Administración de redes locales, VPN, firewalls y servicios de infraestructura.</li>
+          <li data-i18n="skills.infra.li2">Scripting con PowerShell para automatización de tareas y operaciones recurrentes.</li>
+          <li data-i18n="skills.infra.li3">Administración de bases de datos, servicios de Internet y entornos web.</li>
+          <li data-i18n="skills.infra.li4">Uso de ticketing, seguimiento operativo y soporte a procesos internos.</li>
         </ul>
         <div class="tags">
-          <span class="tag">Windows Server</span>
-          <span class="tag">Active Directory</span>
           <span class="tag">PowerShell</span>
+          <span class="tag">VPN</span>
+          <span class="tag">Firewall</span>
         </div>
       </div>
     </div>
   </section>
 
   <section id="certificaciones">
-    <h2 class="fade-in-left" data-i18n="sections.certs">Certificaciones y documentos</h2>
+    <h2 class="fade-in-left" data-i18n="sections.certs">Certificaciones y formación</h2>
     <div class="grid">
       <a class="cert-link fade-in-right delay-100" target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/api/credentials/share/en-us/DiegoManzanaresGarca-8833/330E5498A7C91372?sharingId=595A0C2295E164AD">
         <div class="card cert">
@@ -719,7 +666,7 @@
             <path d="M8 15h8"/>
           </svg>
           <div class="cert-text">
-            <span data-i18n="certs.europass">Europass</span>
+            <span data-i18n="certs.academic">Formación académica y CV</span>
           </div>
         </div>
       </a>
@@ -806,7 +753,6 @@
 </footer>
 
 <script>
-  // Traducciones ES / EN
   const translations = {
     en: {
       nav: {
@@ -818,70 +764,69 @@
       },
       hero: {
         title: "Hi, I'm Diego Manzanares 👋",
-        subtitle1: "Systems administrator for hybrid on-premise and Microsoft Azure environments, specialized in security, PowerShell automation and regulated enterprise environments.",
-        subtitle2: "Currently working as a systems and security administrator in cloud and on-premise environments."
+        subtitle1: "Systems and security administrator specialized in cloud and hybrid environments, PowerShell automation, identity management and Microsoft technologies.",
+        subtitle2: "Experience in technical support, corporate infrastructure, IT security and process documentation in demanding and regulated environments."
       },
       sections: {
         profile: "Professional profile",
         experience: "Professional experience",
         skills: "Technical skills",
-        certs: "Certifications and documents",
+        certs: "Certifications and education",
         contact: "Contact"
       },
       profile: {
-        text: "Systems and security administrator with experience in hybrid infrastructures, networking, identity, automation and compliance in regulated corporate environments. Focused on service reliability, continuous improvement and process standardization."
+        text: "Systems administrator with experience in cloud and on-premise infrastructure, IT security, automation, networking, technical support and identity management. Focused on service stability, incident resolution, continuous improvement and process standardization in corporate environments."
       },
       exp: {
+        cesa: {
+          role: "Systems administrator and technical management · Apr 2024 – Present",
+          li1: "Service automation and implementation of IT security measures.",
+          li2: "Management of the technical support area and coordination of operational IT tasks.",
+          li3: "Domain resource control and identity management with ADDS and Entra ID.",
+          li4: "Business process documentation in the aeronautical sector and participation in audits."
+        },
+        ufp: {
+          role: "Systems administrator · Apr 2023 – Apr 2024",
+          li1: "Administration and monitoring of services and infrastructure with a focus on IT security.",
+          li2: "ERP administration and support for business-critical corporate services.",
+          li3: "Development and maintenance of web environments and related technical support.",
+          li4: "Participation in departmental audits and compliance with standard regulations."
+        },
         sas: {
           role: "Systems administrator · Mar 2021 – Apr 2023",
           li1: "Management of local networks, VPN and firewall rules in corporate environments.",
-          li2: "Automation of administration tasks with PowerShell and job scheduling.",
-          li3: "Administration of web services, databases and business applications.",
-          li4: "Monitoring of services and information security in critical environments.",
-          li5: "Departmental audits and compliance with internal standards."
-        },
-        ufp: {
-          role: "Systems administrator and technical support · Apr 2023 – Apr 2024",
-          li1: "Implementation of security measures and automation of infrastructure services.",
-          li2: "Management of the technical support area and resolution of first and second level incidents.",
-          li3: "Documentation of processes in an aeronautical environment and maintenance of procedures.",
-          li4: "Participation in audits and compliance with standard sector regulations."
-        },
-        cesa: {
-          role: "Systems and security administrator · Apr 2024 – Present",
-          li1: "Administration and monitoring of hybrid on-premise and Azure environments.",
-          li2: "System hardening, identity management and access control.",
-          li3: "Collaboration in security and compliance initiatives in regulated environments.",
-          li4: "Support to internal teams and coordination with other IT departments."
+          li2: "Task automation and scripting with PowerShell, including scheduled tasks.",
+          li3: "Workflow creation, incident tracking and use of ticketing tools.",
+          li4: "Administration of Internet services, databases and systems monitoring."
         }
       },
       skills: {
-        azure: {
-          title: "Microsoft Azure",
-          li1: "Administration of Azure resources: compute, storage and networking.",
-          li2: "Azure AD, identities, groups, roles and policies.",
-          li3: "Azure Networking: VNets, VPN, NSG, load balancers.",
-          li4: "Monitoring, backup and high availability in Azure."
+        cloud: {
+          title: "Cloud and Microsoft technologies",
+          li1: "Administration of Microsoft Azure environments and cloud services.",
+          li2: "Identity management, access control and domain resources with ADDS and Entra ID.",
+          li3: "Knowledge of hybrid infrastructure and operation of corporate services.",
+          li4: "Solid background in Microsoft technologies for systems administration."
         },
         security: {
-          title: "Security and compliance",
-          li1: "Hardening of Windows systems and on-premise and cloud services.",
-          li2: "Access management, MFA and security policies.",
-          li3: "Internal audits and support for regulatory compliance.",
-          li4: "Log supervision and basic incident response."
+          title: "Security, support and operations",
+          li1: "Implementation of IT security measures and secure service administration.",
+          li2: "Monitoring, technical support and incident resolution.",
+          li3: "Participation in audits and process documentation in regulated environments.",
+          li4: "Operational management of critical services and service continuity."
         },
         infra: {
-          title: "Infrastructure and automation",
-          li1: "Administration of Windows Server, Active Directory and GPO.",
-          li2: "Management of local networks, VPN and firewalls.",
-          li3: "PowerShell scripting to automate recurring tasks.",
-          li4: "Use of ticketing tools and process documentation."
+          title: "Infrastructure, networking and automation",
+          li1: "Administration of local networks, VPN, firewalls and infrastructure services.",
+          li2: "PowerShell scripting for automation of recurring tasks and operations.",
+          li3: "Administration of databases, Internet services and web environments.",
+          li4: "Use of ticketing, operational tracking and support for internal processes."
         }
       },
       certs: {
         az104: "AZ-104 · Azure Administrator",
         az500: "AZ-500 · Azure Security Engineer",
-        europass: "Europass"
+        academic: "Education and CV"
       },
       contact: {
         location: "Madrid, Spain",
@@ -898,13 +843,10 @@
   }
 
   function applyTranslations(langCode) {
-    if (!langCode.startsWith("en")) {
-      return;
-    }
+    if (!langCode.startsWith("en")) return;
     const t = translations.en;
 
     document.documentElement.lang = "en";
-    // Dejamos el <title> del HTML, no lo sobrescribimos para mantener el SEO
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
@@ -926,28 +868,19 @@
   }
 
   function setupScrollAnimations() {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
-    animatedElements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in')
+      .forEach(el => observer.observe(el));
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     const lang = getBrowserLang();
     applyTranslations(lang);
-
     setupScrollAnimations();
 
     const el = document.getElementById("typewriter");
